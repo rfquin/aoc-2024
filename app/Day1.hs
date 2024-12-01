@@ -29,9 +29,6 @@ differences s = compress (sort $ getFirst s, sort $ getSecond s)
 compress :: ([Int], [Int]) -> [Int]
 compress (xs, ys) = map (\(x,y) -> abs $ x - y) (zip xs ys)
 
-separate :: [String] -> ([Int], [Int])
-separate x = (getFirst x, getSecond x)
-
 getFirst :: [String] -> [Int]
 getFirst = map (\x -> read $ head $ words x)
 
