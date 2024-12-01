@@ -2,4 +2,4 @@
 
 Advent of Code 2024 in Haskell
 
-Solutions are within the app folder
+Solutions are within the app dir
