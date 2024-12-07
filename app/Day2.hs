@@ -24,18 +24,6 @@ generate (xs) = map (\y -> take y xs ++ drop (y+1) xs)[0..(length xs - 1)]
 isAdjacent :: [Int] -> Bool
 isAdjacent (xs) = isAdjacentDecreasing xs || isAdjacentIncreasing xs
 
-findBadDecrease :: [Int] -> Int -> Maybe Int
-findBadDecrease (x:x':xs) (a)
-  | (x-x' >= 1) && (x-x' <= 3) = findBadDecrease (x':xs) (a+1)
-  | otherwise = (Just a)
-findBadDecrease (_) (_)= Nothing
-
-findBadIncrease :: [Int] -> Int -> Maybe Int
-findBadIncrease (x:x':xs) (a)
-  | (x'-x >= 1) && (x'-x <= 3) = findBadIncrease (x':xs) (a+1)
-  | otherwise = Just a
-findBadIncrease (_) (_) = Nothing
-
 -- part one solution
 
 solvePartOne :: [String] -> Int
